@@ -1,0 +1,33 @@
+HOW FAST TREE WORKS
+FastTree has five main stages
+  1. Heuristic Neighbor-Joining
+    - Uses a heuristic variant of neighbor joining (stores profiles of internal nodes),
+      does not compute distance matrix'
+
+  2. Minimum Evolution
+    - Tries to reduce the length of the tree using NNI's and SPR's
+    - FastTree needs to estimate distances between sequences or profiles
+    - For nucleotide sequences, uses the Jukes-Cantor distance
+    - When comparing two sequences, gaps are ignored; when comparing profiles, positions
+      weighted by proportions of non-gaps
+
+  3. Maximizing the tree's likelihood
+    - FastTree uses the generalized time-reversible models to improve tree w/ ML rearrangements
+    - "By default, FastTree accounts for variable rates of evolution across sites by assigning each
+      site to one of 20 categories, with the rates geometrically spaced from 0.05 to 20. FastTree sets
+      each site to its most likely category by using a Bayesian approach with a gamma prior. This prevents
+      overfitting on small alignments."
+    - FasTree search for more likely topology faster than RAxML b/c
+      1. Maintains a single topology at any given moment
+      2. Optimizes site rate categories and other parameters only once
+      3. Does not traverse into subtrees that have not seen significant improvement in likelihood
+      4. Limits number of rounds of NNI's to ensure predictable running time
+
+   4. Local support values
+    - 
+
+Source: http://meta.microbesonline.org/fasttree/#How
+
+Questions:
+What are profiles of internal nodes?
+What are NNI's and SPR's?

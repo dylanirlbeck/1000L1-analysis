@@ -1,0 +1,4 @@
+PAUP* NJ 
+echo "ToNEXUS format=FASTA fromFile=[input alignment FASTA file] toFile= [alignment NEXUS file];
+exe [alignment NEXUS file]; NJ distance=logDet showtree=No;
+savetrees file=[output species tree file]" | ./paup4a164_osx -n
