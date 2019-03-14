@@ -1,4 +1,7 @@
-PAUP* NJ 
+PAUP* NJ
 echo "ToNEXUS format=FASTA fromFile=[input alignment FASTA file] toFile= [alignment NEXUS file];
 exe [alignment NEXUS file]; NJ distance=logDet showtree=No;
 savetrees file=[output species tree file]" | ./paup4a164_osx -n
+
+FastTree 2
+./FastTree -nt -gtr 1000L1data/R${i}/rose.aln.true.fasta > 1000L1FastTrees/R${i}_true.tt
