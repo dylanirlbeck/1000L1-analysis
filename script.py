@@ -8,6 +8,8 @@ import os
 # Perform analysis on generated trees
 NJ_trees = []
 Fast_trees = []
+FP_FN_rates_NJ = []
+FP_FN_rates_Fast = []
 
 # get the file paths for all trees
 for i in range(20):
@@ -15,5 +17,10 @@ for i in range(20):
     NJ_trees.append(current_dir + "1000L1NJTrees/R" + str(i) + "_tree.tre")
     Fast_trees.append(current_dir + "1000L1FastTrees/R" + str(i) + "_true.tt")
 
-proc = subprocess.Popen(['python', 'compare_trees.py',  '-t1', '1000L1NJTrees/R1_tree.tre', '-t2', '1000L1data/R1/rose.tt'], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-print(proc.communicate()[0])
+for i in range(20):
+    arg_1 = "1000L1NJTrees/R" + str(i) + "_tree.tre"
+    arg_2 = "1000L1data/R" + str(i) + "/rose.tt"
+    proc = subprocess.Popen(['python', 'compare_trees.py',  '-t1', arg_1, '-t2', arg_2], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    print((proc.communicate()[0]).decode().split())
+    ######## FN Error rate will be 4th element (minus a , at the end)###########
+    ######## FP Error rate will be 9th element #################################

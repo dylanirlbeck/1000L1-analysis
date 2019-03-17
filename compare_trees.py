@@ -61,7 +61,7 @@ def main(args):
     tr2.collapse_basal_bifurcation(set_as_unrooted_tree=True)
 
     [nl, ei1, ei2, fp, fn, rf] = compare_trees(tr1, tr2)
-    print("RF distance on %d shared leaves: %d" % (nl, fp + fn))
+    print("FN error rate = %d, FP error rate = %d" % (fn, fp))
 
     # sys.stdout.write('%d %d %d %d %d %f' % (nl, ei1, ei2, fp, fn, rf))
     # sys.stdout.flush()
