@@ -1,8 +1,8 @@
 #NEXUS 
 
 [!
-FASTA file "~/Desktop/Research/ASTR_stuff/1000L1_analysis/1000L1data/R11/rose.aln.true.fasta"
-  (imported Mon Mar 11 15:19:08 2019)
+FASTA file "~/Desktop/1000L1-analysis/1000L1data/R11/rose.aln.true.fasta"
+  (imported Tue Mar 19 11:25:05 2019)
 ]
 Begin data;
     Dimensions ntax=1000 nchar=3944;

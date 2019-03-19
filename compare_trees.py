@@ -61,8 +61,8 @@ def main(args):
     tr2.collapse_basal_bifurcation(set_as_unrooted_tree=True)
 
     [nl, ei1, ei2, fp, fn, rf] = compare_trees(tr1, tr2)
-    print("FN error rate = %d, FP error rate = %d" % (fn, fp))
-
+    print("FN error rate = %d, FP error rate = %d." % (fn, fp))
+    #print("Number of edges in t1: %d, Number of edges in t2: %d" % (ei1, ei2))
     # sys.stdout.write('%d %d %d %d %d %f' % (nl, ei1, ei2, fp, fn, rf))
     # sys.stdout.flush()
     # os._exit(0)
