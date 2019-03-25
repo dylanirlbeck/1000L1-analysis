@@ -2,7 +2,7 @@ import subprocess
 import compare_trees
 import os
 import matplotlib.pyplot as plt
-
+import math
 
 
 # Generate all of our NJ and Fast Tree 2 trees
@@ -35,6 +35,7 @@ for i in range(20):
     FP_rates_Fast[i] = int(FP_rates_Fast[i])/997
     FN_rates_Fast[i] = int(FN_rates_Fast[i])/997
     # can normalize by dividing by n - 3, where n is the number of taxa (1000)
+
 FP_avg_NJ = sum(FP_rates_NJ)/20
 FN_avg_NJ = sum(FN_rates_NJ)/20
 FP_avg_Fast = sum(FP_rates_Fast)/20
@@ -44,6 +45,11 @@ print("Average FP rate for NJ is ", FP_avg_NJ)
 print("Average FN rate for NJ is ", FN_avg_NJ)
 print("Average FP rate for FastTree is ", FP_avg_Fast)
 print("Average FN rate for FastTree is ", FN_avg_Fast)
+
+print("Average FP count for NJ is ", int((sum(FP_rates_NJ)*997)/20))
+print("Average FN count for NJ is ", int((sum(FN_rates_NJ)*997)/20))
+print("Average FP count for FastTree is ",int((sum(FP_rates_Fast)*997)/20))
+print("Average FN count for FastTree is ", int((sum(FN_rates_Fast)*997)/20))
 
 plt.plot([i for i in range(20)], FP_rates_NJ, '-', label='PAUP*')
 plt.plot([i for i in range(20)], FP_rates_Fast, '-', label='FastTreee')
